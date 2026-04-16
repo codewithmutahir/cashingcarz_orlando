@@ -635,6 +635,23 @@ Route::get('/locations/sunnyvale-ca', function () { return view('locations.sunny
 Route::get('/locations/desoto-tx', function () { return view('locations.desoto-tx');})->name('locations.desoto-tx');
 Route::get('/locations/hutchins-tx', function () { return view('locations.hutchins-tx');})->name('locations.hutchins-tx');
 
+// Florida service pages
+Route::get('/locations/sanford-fl', function () { return view('locations.sanford-fl'); })->name('locations.sanford-fl');
+Route::get('/locations/apopka-fl', function () { return view('locations.apopka-fl'); })->name('locations.apopka-fl');
+Route::get('/locations/lake-mary-fl', function () { return view('locations.lake-mary-fl'); })->name('locations.lake-mary-fl');
+Route::get('/locations/longwood-fl', function () { return view('locations.longwood-fl'); })->name('locations.longwood-fl');
+Route::get('/locations/clermont-fl', function () { return view('locations.clermont-fl'); })->name('locations.clermont-fl');
+Route::get('/locations/oviedo-fl', function () { return view('locations.oviedo-fl'); })->name('locations.oviedo-fl');
+Route::get('/locations/st-cloud-fl', function () { return view('locations.st-cloud-fl'); })->name('locations.st-cloud-fl');
+Route::get('/locations/sebring-fl', function () { return view('locations.sebring-fl'); })->name('locations.sebring-fl');
+Route::get('/locations/palm-bay-fl', function () { return view('locations.palm-bay-fl'); })->name('locations.palm-bay-fl');
+Route::get('/locations/daytona-beach-fl', function () { return view('locations.daytona-beach-fl'); })->name('locations.daytona-beach-fl');
+Route::get('/locations/lakeland-fl', function () { return view('locations.lakeland-fl'); })->name('locations.lakeland-fl');
+Route::get('/locations/deltona-fl', function () { return view('locations.deltona-fl'); })->name('locations.deltona-fl');
+Route::get('/locations/palm-coast-fl', function () { return view('locations.palm-coast-fl'); })->name('locations.palm-coast-fl');
+Route::get('/locations/melbourne-fl', function () { return view('locations.melbourne-fl'); })->name('locations.melbourne-fl');
+Route::get('/locations/leesburg-fl', function () { return view('locations.leesburg-fl'); })->name('locations.leesburg-fl');
+
 
 Route::get('/how-to-get-your-title-in-addison-texas', function () {
     return view('title-guides.addison-title-guide');
