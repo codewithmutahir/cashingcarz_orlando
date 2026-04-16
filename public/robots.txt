@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /vendor/
+Disallow: /auth/
+
+# Optional (if not needed for SEO)
+Disallow: /locale/
+Disallow: /*?display=*
+
+Sitemap: https://cashingcarz.com/sitemap.xml

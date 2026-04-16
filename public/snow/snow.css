@@ -1,0 +1,54 @@
+.snowflake {
+  position: fixed;
+  top: -10px;
+  left: 0;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  color: #fff;
+  font-size: 18px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+
+/* Santa Walking Animation - Appears after page load */
+.santa-walk {
+  position: fixed;
+  bottom: 0;
+  left: 100%; /* Start completely off-screen on the right */
+  width: 150px;
+  height: auto;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0; /* Hidden initially */
+  animation: walk-santa 15s linear 2s infinite; /* 2s delay before starting */
+}
+
+@keyframes walk-santa {
+  0% {
+    left: 100%; /* Start off-screen right */
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  95% {
+    left: -200px; /* Move off-screen left */
+    opacity: 0;
+  }
+  100% {
+    left: -200px; /* Stay hidden */
+    opacity: 0;
+  }
+}
