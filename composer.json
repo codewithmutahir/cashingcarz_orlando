@@ -13,7 +13,7 @@
 	"repositories": [
 		{
 			"type": "vcs",
-			"url": "https://github.com/bedigit/EloquentDataTable"
+			"url": "https://github.com/mayeulak/EloquentDataTable"
 		},
 		{
 			"type": "vcs",
@@ -53,7 +53,7 @@
 		"league/flysystem-aws-s3-v3": "^3.13",
 		"league/flysystem-ftp": "^3.13",
 		"league/flysystem-sftp-v3": "^3.14",
-		"livecontrol/eloquent-datatable": "dev-master",
+		"livecontrol/eloquent-datatable": "dev-master#e58410d75459613020915c1968f807fe840bc42d",
 		"mews/purifier": "^3.4",
 		"paypal/paypal-checkout-sdk": "^1.0",
 		"predis/predis": "^2.1",
