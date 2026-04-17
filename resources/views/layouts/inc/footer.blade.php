@@ -1,5 +1,5 @@
 @php
-    $googleBusinessProfileUrl = 'https://www.google.com/search?q=Cashing+Carz+Junk+Cars+Buyer+And+Removal&stick=H4sIAAAAAAAA_-NgU1I1qLAwM0m1MDVJNEk0NjAyM02zMqgwNra0sLA0SEtOMjFLNLIwXsSq4ZxYnJGZl67gnFhUpeBVmpcNYhUrOJVWphYpOOalKASl5uaXJeYAACtcT9RUAAAA&hl=en&mat=CS7R4U0273FvElYBTVDHnvQLC0aV6r21Xzf6pFE4OFDEaPccinG_kFOOe3k2bYiNZRG0gQQLg62c8xM5elJQM49IWZh6Se3zXJkOyHs5H35szxa31gLhOohhe5cHu5AG1A&authuser=0';
+    $googleBusinessProfileUrl = 'https://www.google.com/search?q=Cashing+Carz&stick=H4sIAAAAAAAA_-NgU1I1qDAyTk4xSrI0Mkk0SzE0MjG0MqhIMks2NTGxMDS3NE0EyhgtYuVxTizOyMxLV3BOLKoCAMKRURM4AAAA&hl=en&mat=CaMVpUlBIKTcElcBTVDHno563xrj68UDA7c3gtXsofc_XALnn7YGbm5-1uiRI_HP85ElKu9etOL124xmyP5Qb4Dggd37JtDjO-p8SYJQrl0Z0B8YvRrIVycijpBH1jXnXfY&authuser=0';
     $socialLinksAreEnabled = (
         config('settings.social_link.facebook_page_url')
         || config('settings.social_link.twitter_url')
