@@ -2,6 +2,7 @@
 
 <style>
     #announcement-popup { display: {{ $show ? 'flex' : 'none' }}; }
+    html.cc-announcement-dismissed #announcement-popup { display: none !important; }
     #announcement-popup .popup-overlay {
         position: fixed; top: 0; left: 0; right: 0; bottom: 0;
         z-index: 9999; display: flex; align-items: center; justify-content: center;
@@ -74,6 +75,18 @@
     }
     #announcement-popup .popup-btn-secondary:hover { color: #111; }
 </style>
+<script>
+    (function () {
+        if (!{{ $show ? 'true' : 'false' }}) return;
+        try {
+            if (document.cookie.split(';').some(function (c) {
+                return c.trim().indexOf('popup_dismissed=') === 0;
+            })) {
+                document.documentElement.classList.add('cc-announcement-dismissed');
+            }
+        } catch (e) {}
+    })();
+</script>
 
 <div id="announcement-popup">
     <div class="popup-overlay">
@@ -122,17 +135,9 @@
 
 <script>
     window.closeAnnouncementPopup = function() {
-        document.getElementById('announcement-popup').style.display = 'none';
+        document.documentElement.classList.add('cc-announcement-dismissed');
+        var el = document.getElementById('announcement-popup');
+        if (el) el.style.display = 'none';
         document.cookie = "popup_dismissed=1; path=/; max-age=" + (60 * 60 * 24 * 7);
     };
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var dismissed = document.cookie.split(';').some(function (c) {
-            return c.trim().startsWith('popup_dismissed=');
-        });
-        if (dismissed) {
-            var el = document.getElementById('announcement-popup');
-            if (el) el.style.display = 'none';
-        }
-    });
 </script>
