@@ -6,9 +6,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
 
     /* ── Base (shared desktop + mobile) ── */
+    /* Below Bootstrap offcanvas (1050) + backdrop (1040) so mobile drawer links receive taps */
     .call-float-wrapper {
         position: fixed;
-        z-index: 9999;
+        z-index: 1020;
         display: flex;
         flex-direction: row;
         align-items: center;
