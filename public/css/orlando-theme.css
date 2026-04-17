@@ -229,14 +229,26 @@
   background: var(--ink);
 }
 
-.co-nav-offcanvas {
-  width: min(100vw, 400px) !important;
+/* Mobile: main nav as dropdown (replaces offcanvas drawer) */
+.orlando-sunshine .co-nav-mobile-dropdown {
+  min-width: min(calc(100vw - 1.5rem), 20rem);
+  max-height: min(75vh, 36rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 0.35rem;
+  z-index: 1060;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
-@media (max-width: 575.98px) {
-  .co-nav-offcanvas {
-    width: 100% !important;
-  }
+.orlando-sunshine .co-nav-mobile-dropdown--sub {
+  max-height: min(50vh, 22rem);
+  overflow-y: auto;
+  min-width: min(16rem, 85vw);
+}
+
+.orlando-sunshine .co-nav-mobile .co-nav__burger {
+  margin: 0;
 }
 
 .co-nav-drawer-link {

@@ -131,55 +131,63 @@
                 <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary co-nav__cta">{{ __('Get Offer') }}</a>
             </div>
 
-            <button class="co-nav__burger d-lg-none btn ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#coNavOffcanvas" aria-controls="coNavOffcanvas" aria-label="Open menu">
-                <span class="co-nav__burger-line"></span>
-                <span class="co-nav__burger-line"></span>
-                <span class="co-nav__burger-line"></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="offcanvas offcanvas-end co-nav-offcanvas" tabindex="-1" id="coNavOffcanvas" aria-labelledby="coNavOffcanvasLabel">
-        <div class="offcanvas-header border-bottom" style="border-color: #E0DDD6 !important;">
-            <h2 class="offcanvas-title h5 mb-0" id="coNavOffcanvasLabel">Menu</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column gap-1">
-            <a href="{{ url('/') }}" class="co-nav-drawer-link">{{ __('Home') }}</a>
-            <a href="{{ route('services') }}" class="co-nav-drawer-link">{{ __('Services') }}</a>
-            <div class="dropdown">
-                <a class="co-nav-drawer-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Locations') }}</a>
-                <ul class="dropdown-menu location-scroll-menu w-100">
-                    @include('layouts.inc.menu.location-dropdown-items')
+            <div class="dropdown d-lg-none ms-auto co-nav-mobile">
+                <button class="co-nav__burger btn"
+                        type="button"
+                        id="coNavMobileMenu"
+                        data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside"
+                        aria-expanded="false"
+                        aria-label="{{ __('Open menu') }}"
+                >
+                    <span class="co-nav__burger-line"></span>
+                    <span class="co-nav__burger-line"></span>
+                    <span class="co-nav__burger-line"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end co-nav-mobile-dropdown shadow" aria-labelledby="coNavMobileMenu">
+                    <li><a class="dropdown-item" href="{{ url('/') }}">{{ __('Home') }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('services') }}">{{ __('Services') }}</a></li>
+                    <li class="dropend">
+                        <button type="button"
+                                class="dropdown-item dropdown-toggle d-flex align-items-center justify-content-between"
+                                id="coNavMobileLocations"
+                                data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside"
+                                aria-expanded="false">{{ __('Locations') }}</button>
+                        <ul class="dropdown-menu dropdown-menu-end co-nav-mobile-dropdown--sub location-scroll-menu" aria-labelledby="coNavMobileLocations">
+                            @include('layouts.inc.menu.location-dropdown-items')
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="{{ route('testimonial') }}">{{ __('Testimonials') }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('referrals.create') }}">{{ __('Referrals') }}</a></li>
+                    <li><a class="dropdown-item" href="{{ \App\Helpers\UrlGen::contact() }}">{{ __('Contact Us') }}</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ route('donate') }}">{{ __('Donate') }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('sells') }}">{{ __('Sell') }}</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    @if (!auth()->check())
+                        <li>
+                            @if (config('settings.security.login_open_in_modal'))
+                                <a href="#quickLogin" class="dropdown-item" data-bs-toggle="modal">{{ t('log_in') }}</a>
+                            @else
+                                <a href="{{ \App\Helpers\UrlGen::login() }}" class="dropdown-item">{{ t('log_in') }}</a>
+                            @endif
+                        </li>
+                        <li><a href="{{ \App\Helpers\UrlGen::register() }}" class="dropdown-item">{{ t('sign_up') }}</a></li>
+                    @else
+                        <li><a href="{{ url('account') }}" class="dropdown-item">{{ t('My Account') }}</a></li>
+                    @endif
+                    @if (config('settings.single.pricing_page_enabled') == '2')
+                        <li><a href="{{ \App\Helpers\UrlGen::pricing() }}" class="dropdown-item">{{ t('pricing_label') }}</a></li>
+                    @endif
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="px-2 pb-1">
+                        <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary w-100 text-center d-block">{{ __('Get Offer') }}</a>
+                    </li>
                 </ul>
             </div>
-            <a href="{{ route('testimonial') }}" class="co-nav-drawer-link">{{ __('Testimonials') }}</a>
-            <a href="{{ route('referrals.create') }}" class="co-nav-drawer-link">{{ __('Referrals') }}</a>
-            <a href="{{ \App\Helpers\UrlGen::contact() }}" class="co-nav-drawer-link">{{ __('Contact Us') }}</a>
-            <hr class="my-2">
-            <a href="{{ route('donate') }}" class="co-nav-drawer-link">{{ __('Donate') }}</a>
-            <a href="{{ route('sells') }}" class="co-nav-drawer-link">{{ __('Sell') }}</a>
-            <hr class="my-2">
-            @if (!auth()->check())
-                @if (config('settings.security.login_open_in_modal'))
-                    <a href="#quickLogin" class="co-nav-drawer-link" data-bs-toggle="modal">{{ t('log_in') }}</a>
-                @else
-                    <a href="{{ \App\Helpers\UrlGen::login() }}" class="co-nav-drawer-link">{{ t('log_in') }}</a>
-                @endif
-                <a href="{{ \App\Helpers\UrlGen::register() }}" class="co-nav-drawer-link">{{ t('sign_up') }}</a>
-            @else
-                <a href="{{ url('account') }}" class="co-nav-drawer-link">{{ t('My Account') }}</a>
-            @endif
-
-            @if (config('settings.single.pricing_page_enabled') == '2')
-                <a href="{{ \App\Helpers\UrlGen::pricing() }}" class="co-nav-drawer-link">{{ t('pricing_label') }}</a>
-            @endif
-
-            <div class="mt-auto pt-4">
-                <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary w-100 text-center">{{ __('Get Offer') }}</a>
-            </div>
         </div>
-    </div>
+    </nav>
 </div>
 
 @once

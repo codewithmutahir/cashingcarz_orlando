@@ -34,7 +34,7 @@
                 <div class="col-12">
                     <!-- Blog Grid -->
                     <div class="row blog-grid g-4"> <!-- Added gutter spacing -->
-                        @foreach($blogs as $blog)
+                        @forelse($blogs as $blog)
                             <div class="col-xl-4 col-lg-6 col-md-6 mb-4"> <!-- Responsive columns -->
                                 <div class="card h-100 shadow-none border rounded-0">
                                     <!-- Image Container -->
@@ -83,13 +83,19 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="col-12 text-center py-5">
+                                <p class="text-muted mb-0">No articles published yet — check back soon.</p>
+                            </div>
+                        @endforelse
                     </div>
                     
                     <!-- Pagination -->
+                    @if($blogs->isNotEmpty())
                     <div class="mt-4">
                         {{ $blogs->links() }}
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

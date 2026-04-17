@@ -336,7 +336,7 @@ public function update(Request $request, $id)
 
         public function blog_show()
     {
-        $blogs = blogpost::orderBy('created_at', 'desc')->paginate(15); // ❌ No filtering
+        $blogs = blogpost::query()->whereRaw('1 = 0')->paginate(15);
         return view('pages.blog', compact('blogs'));
     }
 

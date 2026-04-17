@@ -17,7 +17,6 @@
 namespace App\Http\Controllers\Web\Public;
 
 use Larapen\LaravelMetaTags\Facades\MetaTag;
-use App\Models\blogpost;
 
 class HomeController extends FrontController
 {
@@ -47,12 +46,7 @@ public function index()
 		$getSearchFormOp = data_get($sections, 'getSearchForm.getSearchFormOp') ?? [];
 		$this->setSeo($getSearchFormOp);
 		
-		// Get latest 3 blogs - ADD THIS
-		$latestBlogs = blogpost::orderBy('created_at', 'desc')
-			->take(3)
-			->get();
-		
-		return appView('home.index', compact('sections', 'isFromHome', 'latestBlogs'));
+		return appView('home.index', compact('sections', 'isFromHome'));
 	}
 	
 	/**

@@ -293,7 +293,6 @@
         @include('easy_step')
         @include('client_logo')
         @include('faq')
-        @include('blogs')
 
     </div>
 @endsection
