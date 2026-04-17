@@ -41,8 +41,18 @@
                 <li class="nav-item">
                     <a href="{{ route('services') }}" class="nav-link co-nav__link">{{ __('Services') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('location.services') }}" class="nav-link co-nav__link">{{ __('Location Services') }}</a>
+                <li class="nav-item dropdown co-nav__locations">
+                    <a href="javascript:void(0)"
+                       class="nav-link co-nav__link dropdown-toggle"
+                       id="coNavLocationsDesktop"
+                       role="button"
+                       aria-expanded="false"
+                       aria-haspopup="true"
+                    >{{ __('Locations') }}</a>
+                    <ul class="dropdown-menu co-nav__locations-menu shadow-sm location-scroll-menu"
+                        aria-labelledby="coNavLocationsDesktop">
+                        @include('layouts.inc.menu.location-dropdown-items')
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('testimonial') }}" class="nav-link co-nav__link">{{ __('Testimonials') }}</a>
@@ -135,44 +145,18 @@
         <div class="offcanvas-body d-flex flex-column gap-1">
             <a href="{{ url('/') }}" class="co-nav-drawer-link">{{ __('Home') }}</a>
             <a href="{{ route('services') }}" class="co-nav-drawer-link">{{ __('Services') }}</a>
-            <a href="{{ route('location.services') }}" class="co-nav-drawer-link">{{ __('Location Services') }}</a>
+            <div class="dropdown">
+                <a class="co-nav-drawer-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Locations') }}</a>
+                <ul class="dropdown-menu location-scroll-menu w-100">
+                    @include('layouts.inc.menu.location-dropdown-items')
+                </ul>
+            </div>
             <a href="{{ route('testimonial') }}" class="co-nav-drawer-link">{{ __('Testimonials') }}</a>
             <a href="{{ route('referrals.create') }}" class="co-nav-drawer-link">{{ __('Referrals') }}</a>
             <a href="{{ \App\Helpers\UrlGen::contact() }}" class="co-nav-drawer-link">{{ __('Contact Us') }}</a>
             <hr class="my-2">
             <a href="{{ route('donate') }}" class="co-nav-drawer-link">{{ __('Donate') }}</a>
             <a href="{{ route('sells') }}" class="co-nav-drawer-link">{{ __('Sell') }}</a>
-            <div class="dropdown">
-                <a class="co-nav-drawer-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ __('Locations') }}</a>
-                <ul class="dropdown-menu location-scroll-menu w-100">
-                    <li><a class="dropdown-item" href="{{ route('locations.ferris-tx') }}">Ferris, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.glenn-heights-tx') }}">Glenn Heights, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.cockrell-hill-tx') }}">Cockrell Hill, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.balch-springs-tx') }}">Balch Springs, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.combine-tx') }}">Combine, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.cedar-hill-tx') }}">Cedar Hill, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.carrollton-tx') }}">Carrollton, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.coppell-tx') }}">Coppell, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.addison-tx') }}">Addison, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.dallas-tx') }}">Dallas, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.duncanville-tx') }}">Duncanville, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.irving-tx') }}">Irving, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.farmers-branch-tx') }}">Farmers Branch, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.lancaster-pa') }}">Lancaster, PA</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.lewisville-tx') }}">Lewisville, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.oak-cliff-tx') }}">Oak Cliff, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('junk.richardson') }}">Richardson, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.rowlett-tx') }}">Rowlett, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.seagoville-tx') }}">Seagoville, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.mesquite-nv') }}">Mesquite, NV</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.highland-park-tx') }}">Highland Park, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.garland-tx') }}">Garland, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.grand-prairie-tx') }}">Grand Prairie, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.sunnyvale-ca') }}">Sunnyvale, CA</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.desoto-tx') }}">Desoto, TX</a></li>
-                    <li><a class="dropdown-item" href="{{ route('locations.hutchins-tx') }}">Hutchins, TX</a></li>
-                </ul>
-            </div>
             <hr class="my-2">
             @if (!auth()->check())
                 @if (config('settings.security.login_open_in_modal'))

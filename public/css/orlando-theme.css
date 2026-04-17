@@ -164,6 +164,25 @@
   color: var(--slate-hover) !important;
 }
 
+/* Desktop: Locations opens on hover (no separate index page in nav) */
+@media (min-width: 992px) {
+  .co-nav__locations.dropdown:hover > .dropdown-menu,
+  .co-nav__locations.dropdown:focus-within > .dropdown-menu {
+    display: block;
+  }
+
+  .co-nav__locations .dropdown-menu {
+    margin-top: 0;
+  }
+
+  .co-nav__locations-menu {
+    max-height: min(70vh, 440px);
+    overflow-y: auto;
+    min-width: 240px;
+    z-index: 1050;
+  }
+}
+
 .co-nav__right .co-nav__link {
   font-size: 15px;
   color: var(--ink) !important;
