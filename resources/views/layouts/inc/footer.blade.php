@@ -1,5 +1,6 @@
 @php
     $googleBusinessProfileUrl = 'https://www.google.com/search?q=Cashing+Carz&stick=H4sIAAAAAAAA_-NgU1I1qDAyTk4xSrI0Mkk0SzE0MjG0MqhIMks2NTGxMDS3NE0EyhgtYuVxTizOyMxLV3BOLKoCAMKRURM4AAAA&hl=en&mat=CaMVpUlBIKTcElcBTVDHno563xrj68UDA7c3gtXsofc_XALnn7YGbm5-1uiRI_HP85ElKu9etOL124xmyP5Qb4Dggd37JtDjO-p8SYJQrl0Z0B8YvRrIVycijpBH1jXnXfY&authuser=0';
+    $facebookPageUrl = 'https://www.facebook.com/share/16QRT99Axd/';
     $socialLinksAreEnabled = (
         config('settings.social_link.facebook_page_url')
         || config('settings.social_link.twitter_url')
@@ -87,11 +88,6 @@
                 <h4 class="footer-title">Contact</h4>
                 <ul class="list-unstyled footer-nav">
                     <li><a href="{{ \App\Helpers\UrlGen::contact() }}">{{ t('Contact') }}</a></li>
-                    <li>
-                        <a href="{{ $googleBusinessProfileUrl }}"
-                           target="_blank"
-                           rel="noopener noreferrer">{{ __('Google Business Profile') }}</a>
-                    </li>
                     <li><a href="https://cashingcarzorlando.com/sitemap.xml">{{ t('sitemap') }}</a></li>
                     @if (isset($countries) && $countries->count() > 1)
                         <li><a href="{{ \App\Helpers\UrlGen::countries() }}">{{ t('countries') }}</a></li>
@@ -116,27 +112,25 @@
                            data-bs-placement="top"
                            data-bs-toggle="tooltip"
                            href="{{ $googleBusinessProfileUrl }}"
-                           title="{{ __('Google Business Profile') }}"
+                           title="Google"
                            target="_blank"
                            rel="noopener noreferrer"
                         >
                             <i class="fab fa-google"></i>
                         </a>
                     </li>
-                    @if ($socialLinksAreEnabled)
-                        <li class="list-inline-item">
-                            <a class="icon-color fb"
-                               data-bs-placement="top"
-                               data-bs-toggle="tooltip"
-                               href="{{ config('settings.social_link.facebook_page_url') ?: 'https://www.facebook.com/share/16QRT99Axd/' }}"
-                               title="Facebook"
-                               target="_blank"
-                               rel="noopener"
-                            >
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                    @endif
+                    <li class="list-inline-item">
+                        <a class="icon-color fb"
+                           data-bs-placement="top"
+                           data-bs-toggle="tooltip"
+                           href="{{ $facebookPageUrl }}"
+                           title="Facebook"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
