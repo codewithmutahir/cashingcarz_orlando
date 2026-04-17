@@ -14,10 +14,6 @@
 		{
 			"type": "vcs",
 			"url": "https://github.com/mayeulak/EloquentDataTable"
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/bedigit/guzzle6-adapter"
 		}
 	],
 	"require": {
