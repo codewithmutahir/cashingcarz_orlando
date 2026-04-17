@@ -6,7 +6,7 @@
 @section('meta_robots', 'index, follow')
 
 @section('content')
-<div class="junk-car-page" style="background: linear-gradient(135deg, #fff9f4 0%, #fdfdfd 50%, #f2f6ff 100%); padding: 2rem 0; margin-top:150px; font-family: 'Inter', sans-serif;">
+<div class="junk-car-page" style="background: linear-gradient(135deg, #fff9f4 0%, #fdfdfd 50%, #f2f6ff 100%); padding: 2rem 0; font-family: 'Inter', sans-serif;">
 
   <!-- Hero -->
   <div class="hero-container" style="max-width:1200px; margin:0 auto; padding:0 1rem;">

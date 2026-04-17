@@ -4,7 +4,7 @@
 @section('meta_keywords', 'Sell Junk Car Leesburg FL, Junk Car Removal Leesburg, Cash for Cars Leesburg')
 @section('meta_robots', 'index, follow')
 @section('content')
-<div class="junk-car-page" style="background:linear-gradient(135deg,#fff9f4 0%,#fdfdfd 50%,#f2f6ff 100%);padding:2rem 0;margin-top:150px;font-family:'Inter',-apple-system,sans-serif;">
+<div class="junk-car-page" style="background:linear-gradient(135deg,#fff9f4 0%,#fdfdfd 50%,#f2f6ff 100%);padding:2rem 0;font-family:'Inter',-apple-system,sans-serif;">
   <div style="max-width:1200px;margin:0 auto;padding:0 1rem;">
     <div style="background:rgba(255,255,255,0.97);border-radius:24px;padding:4rem 2rem;text-align:center;box-shadow:0 25px 50px rgba(15,12,41,0.15);position:relative;overflow:hidden;animation:slideInUp 0.8s ease-out;margin-bottom:2rem;">
       <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#FF6B35,#F7931E,#FFD23F,#06FFA5);"></div>

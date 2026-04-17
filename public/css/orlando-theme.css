@@ -2008,12 +2008,23 @@ body.skin.orlando-sunshine:not(:has(.testimonials-container)) {
 }
 
 /* --- Junk / location landings --- */
+/* Inline templates use margin-top:150px; override so content sits just under the fixed nav */
 .orlando-sunshine .junk-car-page {
   background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--white) 100%) !important;
   font-family: "DM Sans", system-ui, sans-serif !important;
-  margin-top: var(--nav-h) !important;
-  padding-top: 2rem !important;
-  padding-bottom: 3rem !important;
+  margin-top: 0 !important;
+  padding-top: calc(var(--nav-h, 84px) + 1rem) !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Gradient + background-clip text fails in some browsers → invisible h1; force readable fill */
+.orlando-sunshine .junk-car-page h1 {
+  color: #0f0c29 !important;
+  -webkit-text-fill-color: #0f0c29 !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
 }
 
 .orlando-sunshine .junk-car-page a[href^="tel:"] {
