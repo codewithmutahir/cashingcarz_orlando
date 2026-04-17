@@ -92,7 +92,7 @@
                            target="_blank"
                            rel="noopener noreferrer">{{ __('Google Business Profile') }}</a>
                     </li>
-                    <li><a href="https://cashingcarz.com/sitemap.xml">{{ t('sitemap') }}</a></li>
+                    <li><a href="https://cashingcarzorlando.com/sitemap.xml">{{ t('sitemap') }}</a></li>
                     @if (isset($countries) && $countries->count() > 1)
                         <li><a href="{{ \App\Helpers\UrlGen::countries() }}">{{ t('countries') }}</a></li>
                     @endif
