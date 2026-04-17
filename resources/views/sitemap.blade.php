@@ -74,35 +74,8 @@
     @endforeach
     
     @php
-    $locationCities = [
-        'ferris-tx',
-        'glenn-heights-tx',
-        'cockrell-hill-tx',
-        'balch-springs-tx',
-        'combine-tx',
-        'cedar-hill-tx',
-        'carrollton-tx',
-        'coppell-tx',
-        'addison-tx',
-        'dallas-tx',
-        'duncanville-tx',
-        'irving-tx',
-        'farmers-branch-tx',
-        'lancaster-pa',
-        'lewisville-tx',
-        'oak-cliff-tx',
-        'junk-car-removal-richardson-tx',
-        'rowlett-tx',
-        'seagoville-tx',
-        'mesquite-nv',
-        'highland-park-tx',
-        'garland-tx',
-        'grand-prairie-tx',
-        'sunnyvale-ca',
-        'desoto-tx',
-        'hutchins-tx',
-    ];
-@endphp
+        $locationCities = array_keys(config('fl_location_service_pages'));
+    @endphp
 
 @foreach ($locationCities as $location)
     <url>

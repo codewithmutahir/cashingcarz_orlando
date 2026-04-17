@@ -608,49 +608,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/account/bank-details', [\App\Http\Controllers\BankDetailsController::class, 'update'])->name('bank.update');
 });
 
-Route::get('/locations/ferris-tx', function () { return view('locations.ferris-tx');})->name('locations.ferris-tx');
-Route::get('/locations/glenn-heights-tx', function () { return view('locations.glenn-heights-tx');})->name('locations.glenn-heights-tx');
-Route::get('/locations/cockrell-hill-tx', function () { return view('locations.cockrell-hill-tx');})->name('locations.cockrell-hill-tx');
-Route::get('/locations/balch-springs-tx', function () { return view('locations.balch-springs-tx');})->name('locations.balch-springs-tx');
-Route::get('/locations/combine-tx', function () { return view('locations.combine-tx');})->name('locations.combine-tx');
-Route::get('/locations/cedar-hill-tx', function () { return view('locations.cedar-hill-tx');})->name('locations.cedar-hill-tx');
-Route::get('/locations/carrollton-tx', function () { return view('locations.carrollton-tx');})->name('locations.carrollton-tx');
-Route::get('/locations/coppell-tx', function () { return view('locations.coppell-tx');})->name('locations.coppell-tx');
-Route::get('/locations/addison-tx', function () { return view('locations.addison-tx');})->name('locations.addison-tx');
-Route::get('/locations/dallas-tx', function () { return view('locations.dallas-tx');})->name('locations.dallas-tx');
-Route::get('/locations/duncanville-tx', function () { return view('locations.duncanville-tx');})->name('locations.duncanville-tx');
-Route::get('/locations/irving-tx', function () {return view('locations.irving-tx');})->name('locations.irving-tx');
-Route::get('/locations/farmers-branch-tx', function () { return view('locations.farmers-branch-tx');})->name('locations.farmers-branch-tx');
-Route::get('/locations/lancaster-pa', function () { return view('locations.lancaster-pa');})->name('locations.lancaster-pa');
-Route::get('/locations/lewisville-tx', function () { return view('locations.lewisville-tx');})->name('locations.lewisville-tx');
-Route::get('/locations/oak-cliff-tx', function () { return view('locations.oak-cliff-tx');})->name('locations.oak-cliff-tx');
-Route::get('/locations/junk-car-removal-richardson-tx', function () { return view('locations.richardson-tx');})->name('junk.richardson');
-Route::get('/locations/rowlett-tx', function () { return view('locations.rowlett-tx');})->name('locations.rowlett-tx');
-Route::get('/locations/seagoville-tx', function () { return view('locations.seagoville-tx');})->name('locations.seagoville-tx');
-Route::get('/locations/mesquite-nv', function () { return view('locations.mesquite-nv');})->name('locations.mesquite-nv');
-Route::get('/locations/highland-park-tx', function () { return view('locations.highland-park-tx');})->name('locations.highland-park-tx');
-Route::get('/locations/garland-tx', function () { return view('locations.garland-tx');})->name('locations.garland-tx');
-Route::get('/locations/grand-prairie-tx', function () { return view('locations.grand-prairie-tx');})->name('locations.grand-prairie-tx');
-Route::get('/locations/sunnyvale-ca', function () { return view('locations.sunnyvale-ca');})->name('locations.sunnyvale-ca');
-Route::get('/locations/desoto-tx', function () { return view('locations.desoto-tx');})->name('locations.desoto-tx');
-Route::get('/locations/hutchins-tx', function () { return view('locations.hutchins-tx');})->name('locations.hutchins-tx');
-
-// Florida service pages
-Route::get('/locations/sanford-fl', function () { return view('locations.sanford-fl'); })->name('locations.sanford-fl');
-Route::get('/locations/apopka-fl', function () { return view('locations.apopka-fl'); })->name('locations.apopka-fl');
-Route::get('/locations/lake-mary-fl', function () { return view('locations.lake-mary-fl'); })->name('locations.lake-mary-fl');
-Route::get('/locations/longwood-fl', function () { return view('locations.longwood-fl'); })->name('locations.longwood-fl');
-Route::get('/locations/clermont-fl', function () { return view('locations.clermont-fl'); })->name('locations.clermont-fl');
-Route::get('/locations/oviedo-fl', function () { return view('locations.oviedo-fl'); })->name('locations.oviedo-fl');
-Route::get('/locations/st-cloud-fl', function () { return view('locations.st-cloud-fl'); })->name('locations.st-cloud-fl');
-Route::get('/locations/sebring-fl', function () { return view('locations.sebring-fl'); })->name('locations.sebring-fl');
-Route::get('/locations/palm-bay-fl', function () { return view('locations.palm-bay-fl'); })->name('locations.palm-bay-fl');
-Route::get('/locations/daytona-beach-fl', function () { return view('locations.daytona-beach-fl'); })->name('locations.daytona-beach-fl');
-Route::get('/locations/lakeland-fl', function () { return view('locations.lakeland-fl'); })->name('locations.lakeland-fl');
-Route::get('/locations/deltona-fl', function () { return view('locations.deltona-fl'); })->name('locations.deltona-fl');
-Route::get('/locations/palm-coast-fl', function () { return view('locations.palm-coast-fl'); })->name('locations.palm-coast-fl');
-Route::get('/locations/melbourne-fl', function () { return view('locations.melbourne-fl'); })->name('locations.melbourne-fl');
-Route::get('/locations/leesburg-fl', function () { return view('locations.leesburg-fl'); })->name('locations.leesburg-fl');
+// Florida service pages only — content: config/fl_location_service_pages.php
+foreach (array_keys(config('fl_location_service_pages')) as $flSlug) {
+    Route::get('/locations/'.$flSlug, function () use ($flSlug) {
+        return view('locations.fl-service-page', [
+            'page' => config('fl_location_service_pages.'.$flSlug),
+        ]);
+    })->name('locations.'.$flSlug);
+}
 
 Route::get('/location-services', function () {
     return view('pages.location-services');

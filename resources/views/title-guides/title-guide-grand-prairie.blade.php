@@ -459,10 +459,7 @@
                 <p style="font-weight: bold; color: #1e40af;">Need Help?</p>
             </div>
             <p>Contact <span style="color: #3b82f6; font-weight: bold;">Cashing Carz Grand Prairie</span> for assistance with title status or form completion.</p>
-            <p>
-    Want to know how to get your title in Grand Prairie? 
-    <a href="https://cashingcarz.com/locations/grand-prairie-tx">Read our Title Guide for Grand Prairie</a>.
-</p>
+            <p>We also list <a href="{{ route('location.services') }}">Florida cities where we offer junk car services</a>.</p>
 
         </div>
     </div>
