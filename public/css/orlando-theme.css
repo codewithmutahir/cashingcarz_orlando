@@ -2106,3 +2106,36 @@ body.skin.orlando-sunshine:not(:has(.testimonials-container)) {
   background: var(--surface-elevated);
   color: var(--ink);
 }
+
+/* --- Breadcrumbs (mobile / touch): avoid dead taps under SERP chrome or stacking gaps --- */
+/* custom.css sets body padding-top while #wrapper already offsets the fixed nav — drop the extra inset */
+body.skin.orlando-sunshine {
+  padding-top: 0 !important;
+}
+
+/* Local stacking so crumb links sit above filters/tabs in the same column (not above the fixed header) */
+.orlando-sunshine .co-search-results {
+  isolation: isolate;
+}
+
+.orlando-sunshine .search-breadcrumb {
+  position: relative;
+  z-index: 5;
+}
+
+.orlando-sunshine .search-breadcrumb .breadcrumb-item a {
+  position: relative;
+  z-index: 1;
+  touch-action: manipulation;
+}
+
+.orlando-sunshine .main-container nav[aria-label="breadcrumb"] {
+  position: relative;
+  z-index: 5;
+}
+
+.orlando-sunshine .main-container nav[aria-label="breadcrumb"] .breadcrumb-item a {
+  position: relative;
+  z-index: 1;
+  touch-action: manipulation;
+}
