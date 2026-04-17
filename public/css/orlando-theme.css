@@ -124,6 +124,7 @@
   min-height: var(--nav-h);
   padding-top: 0;
   padding-bottom: 0;
+  overflow: visible;
 }
 
 .co-nav__container {
@@ -132,6 +133,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  overflow: visible;
 }
 
 .co-nav__logo {
@@ -164,22 +166,21 @@
   color: var(--slate-hover) !important;
 }
 
-/* Desktop: Locations opens on hover (no separate index page in nav) */
+/* Desktop: Locations dropdown — Bootstrap adds .show via JS on hover; keep menu unobstructed */
 @media (min-width: 992px) {
-  .co-nav__locations.dropdown:hover > .dropdown-menu,
-  .co-nav__locations.dropdown:focus-within > .dropdown-menu {
-    display: block;
+  .co-header .co-nav .navbar-nav {
+    overflow: visible;
   }
 
   .co-nav__locations .dropdown-menu {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
-  .co-nav__locations-menu {
+  .co-nav__locations-menu.dropdown-menu.show {
     max-height: min(70vh, 440px);
     overflow-y: auto;
     min-width: 240px;
-    z-index: 1050;
+    z-index: 1055;
   }
 }
 

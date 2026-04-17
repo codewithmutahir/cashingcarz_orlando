@@ -46,6 +46,8 @@
                        class="nav-link co-nav__link dropdown-toggle"
                        id="coNavLocationsDesktop"
                        role="button"
+                       data-bs-toggle="dropdown"
+                       data-bs-auto-close="outside"
                        aria-expanded="false"
                        aria-haspopup="true"
                     >{{ __('Locations') }}</a>
@@ -179,3 +181,58 @@
         </div>
     </div>
 </div>
+
+@once
+@push('after_scripts_stack')
+<script>
+(function () {
+    function initCoNavLocationsHover() {
+        var li = document.querySelector('.co-header .co-nav__locations');
+        if (!li || typeof bootstrap === 'undefined' || !bootstrap.Dropdown) {
+            return;
+        }
+        var toggle = li.querySelector('[data-bs-toggle="dropdown"]');
+        if (!toggle) {
+            return;
+        }
+        var dropdown = bootstrap.Dropdown.getInstance(toggle);
+        if (!dropdown) {
+            dropdown = new bootstrap.Dropdown(toggle, { autoClose: true });
+        }
+        var mq = window.matchMedia('(min-width: 992px)');
+
+        function isDesktop() {
+            return mq.matches;
+        }
+
+        li.addEventListener('mouseenter', function () {
+            if (isDesktop()) {
+                dropdown.show();
+            }
+        });
+        li.addEventListener('mouseleave', function () {
+            if (isDesktop()) {
+                dropdown.hide();
+            }
+        });
+        toggle.addEventListener(
+            'click',
+            function (e) {
+                if (isDesktop()) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                }
+            },
+            true
+        );
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCoNavLocationsHover);
+    } else {
+        initCoNavLocationsHover();
+    }
+})();
+</script>
+@endpush
+@endonce
