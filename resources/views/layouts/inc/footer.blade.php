@@ -25,7 +25,7 @@
                 <a href="{{ url('/') }}" class="d-inline-block">
                     <img src="https://cashingcarz.com/public/images/brand.png" alt="Cashing Orlando" class="co-footer-brand__logo">
                 </a>
-                <p class="co-footer-brand__tag">Serving Orlando &amp; Central Florida</p>
+                <p class="co-footer-brand__tag">Cashing Carz is now in Orlando, Florida — serving Central Florida</p>
             </div>
 
             <div class="col-lg-3 col-md-6">
@@ -74,6 +74,7 @@
                 <h4 class="footer-title">Services</h4>
                 <ul class="list-unstyled footer-nav">
                     <li><a href="{{ route('services') }}">{{ __('Services') }}</a></li>
+                    <li><a href="{{ route('location.services') }}">{{ __('Location Services') }}</a></li>
                     <li><a href="{{ route('get_offer') }}">{{ __('Get Offer') }}</a></li>
                     <li><a href="{{ route('sells') }}">{{ __('Sell') }}</a></li>
                     <li><a href="{{ route('donate') }}">{{ __('Donate') }}</a></li>

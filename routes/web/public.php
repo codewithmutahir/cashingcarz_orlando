@@ -652,6 +652,9 @@ Route::get('/locations/palm-coast-fl', function () { return view('locations.palm
 Route::get('/locations/melbourne-fl', function () { return view('locations.melbourne-fl'); })->name('locations.melbourne-fl');
 Route::get('/locations/leesburg-fl', function () { return view('locations.leesburg-fl'); })->name('locations.leesburg-fl');
 
+Route::get('/location-services', function () {
+    return view('pages.location-services');
+})->name('location.services');
 
 Route::get('/how-to-get-your-title-in-addison-texas', function () {
     return view('title-guides.addison-title-guide');

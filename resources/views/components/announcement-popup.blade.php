@@ -98,7 +98,7 @@
                     <path d="M28 38 L28 44" stroke="#111" stroke-width="2" stroke-linecap="round"/>
                 </svg>
 
-                <h2 class="popup-title">We’re live in Orlando &amp; Central Florida</h2>
+                <h2 class="popup-title">Cashing Carz is now in Orlando, Florida</h2>
                 <p class="popup-desc">Sell your junk car for cash with same-day pickup options, free towing with accepted offers, and a team that keeps things bright and simple.</p>
 
                 <div class="feature-list">

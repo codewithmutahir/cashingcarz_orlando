@@ -1,8 +1,8 @@
 <section class="co-locations" aria-labelledby="co-loc-title">
     <div class="container">
         <div class="co-locations__head">
-            <h2 id="co-loc-title" class="co-locations__title">Serving Orlando &amp; Central Florida</h2>
-            <p class="co-locations__sub">Same-day pickup options, free towing with accepted offers, and a team that answers when you call.</p>
+            <h2 id="co-loc-title" class="co-locations__title">Cashing Carz is now in Orlando, Florida</h2>
+            <p class="co-locations__sub">Serving Central Florida — same-day pickup options, free towing with accepted offers, and a team that answers when you call.</p>
         </div>
         <div class="row g-4">
             <div class="col-md-6">

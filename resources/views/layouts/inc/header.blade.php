@@ -42,6 +42,9 @@
                     <a href="{{ route('services') }}" class="nav-link co-nav__link">{{ __('Services') }}</a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('location.services') }}" class="nav-link co-nav__link">{{ __('Location Services') }}</a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('testimonial') }}" class="nav-link co-nav__link">{{ __('Testimonials') }}</a>
                 </li>
                 <li class="nav-item">
@@ -132,6 +135,7 @@
         <div class="offcanvas-body d-flex flex-column gap-1">
             <a href="{{ url('/') }}" class="co-nav-drawer-link">{{ __('Home') }}</a>
             <a href="{{ route('services') }}" class="co-nav-drawer-link">{{ __('Services') }}</a>
+            <a href="{{ route('location.services') }}" class="co-nav-drawer-link">{{ __('Location Services') }}</a>
             <a href="{{ route('testimonial') }}" class="co-nav-drawer-link">{{ __('Testimonials') }}</a>
             <a href="{{ route('referrals.create') }}" class="co-nav-drawer-link">{{ __('Referrals') }}</a>
             <a href="{{ \App\Helpers\UrlGen::contact() }}" class="co-nav-drawer-link">{{ __('Contact Us') }}</a>
