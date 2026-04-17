@@ -131,60 +131,69 @@
                 <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary co-nav__cta">{{ __('Get Offer') }}</a>
             </div>
 
-            <div class="dropdown d-lg-none ms-auto co-nav-mobile">
-                <button class="co-nav__burger btn"
-                        type="button"
-                        id="coNavMobileMenu"
-                        data-bs-toggle="dropdown"
-                        data-bs-auto-close="outside"
-                        aria-expanded="false"
-                        aria-label="{{ __('Open menu') }}"
-                >
-                    <span class="co-nav__burger-line"></span>
-                    <span class="co-nav__burger-line"></span>
-                    <span class="co-nav__burger-line"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end co-nav-mobile-dropdown shadow" aria-labelledby="coNavMobileMenu">
-                    <li><a class="dropdown-item" href="{{ url('/') }}">{{ __('Home') }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('services') }}">{{ __('Services') }}</a></li>
-                    <li class="dropend">
-                        <button type="button"
-                                class="dropdown-item dropdown-toggle d-flex align-items-center justify-content-between"
-                                id="coNavMobileLocations"
-                                data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside"
-                                aria-expanded="false">{{ __('Locations') }}</button>
-                        <ul class="dropdown-menu dropdown-menu-end co-nav-mobile-dropdown--sub location-scroll-menu" aria-labelledby="coNavMobileLocations">
+            <button class="co-nav__burger btn d-lg-none ms-auto"
+                    type="button"
+                    id="coNavMobileToggle"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#coNavMobilePanel"
+                    aria-controls="coNavMobilePanel"
+                    aria-expanded="false"
+                    aria-label="{{ __('Open menu') }}"
+            >
+                <span class="co-nav__burger-line"></span>
+                <span class="co-nav__burger-line"></span>
+                <span class="co-nav__burger-line"></span>
+            </button>
+        </div>
+
+        {{-- Full-width mobile menu (collapsible panel — matches stacked link layout on small screens) --}}
+        <div class="collapse co-nav-mobile-panel d-lg-none w-100" id="coNavMobilePanel">
+            <div class="container co-nav-mobile-panel__inner">
+                <div class="co-nav-mobile-panel__bar">
+                    <button type="button"
+                            class="co-nav-mobile-close"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#coNavMobilePanel"
+                            aria-expanded="true"
+                            aria-controls="coNavMobilePanel"
+                            aria-label="{{ __('Close menu') }}"
+                    >&times;</button>
+                </div>
+                <nav class="co-nav-mobile-list" aria-label="{{ __('Mobile') }}">
+                    <a class="co-nav-mobile-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                    <a class="co-nav-mobile-link" href="{{ route('services') }}">{{ __('Services') }}</a>
+                    <button type="button"
+                            class="co-nav-mobile-link co-nav-mobile-link--toggle text-start w-100 border-0 bg-transparent"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#coNavMobileLocations"
+                            aria-expanded="false"
+                            aria-controls="coNavMobileLocations"
+                    >{{ __('Locations') }}</button>
+                    <div class="collapse co-nav-mobile-locations" id="coNavMobileLocations">
+                        <ul class="list-unstyled co-nav-mobile-locations__list location-scroll-menu mb-0">
                             @include('layouts.inc.menu.location-dropdown-items')
                         </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="{{ route('testimonial') }}">{{ __('Testimonials') }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('referrals.create') }}">{{ __('Referrals') }}</a></li>
-                    <li><a class="dropdown-item" href="{{ \App\Helpers\UrlGen::contact() }}">{{ __('Contact Us') }}</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{{ route('donate') }}">{{ __('Donate') }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('sells') }}">{{ __('Sell') }}</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    </div>
+                    <a class="co-nav-mobile-link" href="{{ route('testimonial') }}">{{ __('Testimonials') }}</a>
+                    <a class="co-nav-mobile-link" href="{{ route('referrals.create') }}">{{ __('Referrals') }}</a>
+                    <a class="co-nav-mobile-link" href="{{ \App\Helpers\UrlGen::contact() }}">{{ __('Contact Us') }}</a>
+                    <a class="co-nav-mobile-link" href="{{ route('donate') }}">{{ __('Donate') }}</a>
+                    <a class="co-nav-mobile-link" href="{{ route('sells') }}">{{ __('Sell') }}</a>
                     @if (!auth()->check())
-                        <li>
-                            @if (config('settings.security.login_open_in_modal'))
-                                <a href="#quickLogin" class="dropdown-item" data-bs-toggle="modal">{{ t('log_in') }}</a>
-                            @else
-                                <a href="{{ \App\Helpers\UrlGen::login() }}" class="dropdown-item">{{ t('log_in') }}</a>
-                            @endif
-                        </li>
-                        <li><a href="{{ \App\Helpers\UrlGen::register() }}" class="dropdown-item">{{ t('sign_up') }}</a></li>
+                        @if (config('settings.security.login_open_in_modal'))
+                            <a href="#quickLogin" class="co-nav-mobile-link" data-bs-toggle="modal">{{ t('log_in') }}</a>
+                        @else
+                            <a href="{{ \App\Helpers\UrlGen::login() }}" class="co-nav-mobile-link">{{ t('log_in') }}</a>
+                        @endif
+                        <a href="{{ \App\Helpers\UrlGen::register() }}" class="co-nav-mobile-link">{{ t('sign_up') }}</a>
                     @else
-                        <li><a href="{{ url('account') }}" class="dropdown-item">{{ t('My Account') }}</a></li>
+                        <a href="{{ url('account') }}" class="co-nav-mobile-link">{{ t('My Account') }}</a>
                     @endif
                     @if (config('settings.single.pricing_page_enabled') == '2')
-                        <li><a href="{{ \App\Helpers\UrlGen::pricing() }}" class="dropdown-item">{{ t('pricing_label') }}</a></li>
+                        <a href="{{ \App\Helpers\UrlGen::pricing() }}" class="co-nav-mobile-link">{{ t('pricing_label') }}</a>
                     @endif
-                    <li><hr class="dropdown-divider"></li>
-                    <li class="px-2 pb-1">
-                        <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary w-100 text-center d-block">{{ __('Get Offer') }}</a>
-                    </li>
-                </ul>
+                    <a href="{{ route('get_offer') }}" class="co-btn co-btn--primary co-nav-mobile-cta">{{ __('Get Offer') }}</a>
+                </nav>
             </div>
         </div>
     </nav>
@@ -240,6 +249,48 @@
     } else {
         initCoNavLocationsHover();
     }
+})();
+
+(function () {
+    var panel = document.getElementById('coNavMobilePanel');
+    var burger = document.getElementById('coNavMobileToggle');
+    if (!panel || typeof bootstrap === 'undefined' || !bootstrap.Collapse) {
+        return;
+    }
+    var collapse = bootstrap.Collapse.getOrCreateInstance(panel, { toggle: false });
+
+    panel.addEventListener('shown.bs.collapse', function () {
+        if (burger) {
+            burger.setAttribute('aria-expanded', 'true');
+            burger.setAttribute('aria-label', '{{ __('Close menu') }}');
+        }
+    });
+    panel.addEventListener('hidden.bs.collapse', function () {
+        if (burger) {
+            burger.setAttribute('aria-expanded', 'false');
+            burger.setAttribute('aria-label', '{{ __('Open menu') }}');
+        }
+    });
+
+    var mq = window.matchMedia('(min-width: 992px)');
+    function closeIfDesktop() {
+        if (mq.matches && panel.classList.contains('show')) {
+            collapse.hide();
+        }
+    }
+    window.addEventListener('resize', closeIfDesktop);
+
+    panel.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href]');
+        if (!link || !panel.contains(link)) {
+            return;
+        }
+        var href = link.getAttribute('href');
+        if (!href || href === '#') {
+            return;
+        }
+        collapse.hide();
+    });
 })();
 </script>
 @endpush

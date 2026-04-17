@@ -229,26 +229,136 @@
   background: var(--ink);
 }
 
-/* Mobile: main nav as dropdown (replaces offcanvas drawer) */
-.orlando-sunshine .co-nav-mobile-dropdown {
-  min-width: min(calc(100vw - 1.5rem), 20rem);
-  max-height: min(75vh, 36rem);
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin-top: 0.35rem;
-  z-index: 1060;
-  border: 1px solid var(--line);
+/* Mobile: full-width stacked menu under header (collapse panel) */
+.orlando-sunshine .co-header .co-nav {
+  flex-wrap: wrap;
+}
+
+.orlando-sunshine .co-nav-mobile-panel {
+  flex-basis: 100%;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  z-index: 1035;
+}
+
+.orlando-sunshine .co-nav-mobile-panel__inner {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0));
+}
+
+.orlando-sunshine .co-nav-mobile-panel__bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 2.25rem;
+}
+
+.orlando-sunshine .co-nav-mobile-close {
+  border: none;
+  background: transparent;
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--ink);
+  padding: 0.2rem 0.6rem;
+  margin-right: -0.35rem;
+  opacity: 0.8;
+  cursor: pointer;
   border-radius: var(--radius);
 }
 
-.orlando-sunshine .co-nav-mobile-dropdown--sub {
-  max-height: min(50vh, 22rem);
-  overflow-y: auto;
-  min-width: min(16rem, 85vw);
+.orlando-sunshine .co-nav-mobile-close:hover {
+  opacity: 1;
+  background: var(--surface-elevated);
 }
 
-.orlando-sunshine .co-nav-mobile .co-nav__burger {
-  margin: 0;
+.orlando-sunshine .co-nav-mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: min(calc(100vh - var(--nav-h, 112px) - 4rem), 720px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.orlando-sunshine .co-nav-mobile-link {
+  display: block;
+  padding: 0.7rem 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  line-height: 1.35;
+}
+
+.orlando-sunshine .co-nav-mobile-link:hover,
+.orlando-sunshine .co-nav-mobile-link:focus {
+  color: var(--slate-hover) !important;
+}
+
+.orlando-sunshine .co-nav-mobile-link--toggle {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  color: var(--ink);
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.orlando-sunshine .co-nav-mobile-link--toggle::after {
+  content: "";
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.orlando-sunshine .co-nav-mobile-link--toggle[aria-expanded="true"]::after {
+  transform: translateY(-20%) rotate(-135deg);
+}
+
+.orlando-sunshine .co-nav-mobile-locations {
+  margin: 0.15rem 0 0.35rem;
+}
+
+.orlando-sunshine .co-nav-mobile-locations__list {
+  max-height: min(38vh, 300px);
+  overflow-y: auto;
+  padding-left: 0.85rem !important;
+  margin-bottom: 0 !important;
+  border-left: 2px solid var(--line);
+}
+
+.orlando-sunshine .co-nav-mobile-locations__list .dropdown-item {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  border-radius: 4px;
+}
+
+.orlando-sunshine .co-nav-mobile-locations__list .dropdown-item:hover {
+  background: var(--surface-elevated);
+}
+
+.orlando-sunshine .co-nav-mobile-cta {
+  margin-top: 0.85rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .orlando-sunshine .co-nav-mobile-panel__inner {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .co-nav-drawer-link {
