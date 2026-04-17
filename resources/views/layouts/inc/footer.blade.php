@@ -1,4 +1,5 @@
 @php
+    $googleBusinessProfileUrl = 'https://www.google.com/search?q=Cashing+Carz+Junk+Cars+Buyer+And+Removal&stick=H4sIAAAAAAAA_-NgU1I1qLAwM0m1MDVJNEk0NjAyM02zMqgwNra0sLA0SEtOMjFLNLIwXsSq4ZxYnJGZl67gnFhUpeBVmpcNYhUrOJVWphYpOOalKASl5uaXJeYAACtcT9RUAAAA&hl=en&mat=CS7R4U0273FvElYBTVDHnvQLC0aV6r21Xzf6pFE4OFDEaPccinG_kFOOe3k2bYiNZRG0gQQLg62c8xM5elJQM49IWZh6Se3zXJkOyHs5H35szxa31gLhOohhe5cHu5AG1A&authuser=0';
     $socialLinksAreEnabled = (
         config('settings.social_link.facebook_page_url')
         || config('settings.social_link.twitter_url')
@@ -86,6 +87,11 @@
                 <h4 class="footer-title">Contact</h4>
                 <ul class="list-unstyled footer-nav">
                     <li><a href="{{ \App\Helpers\UrlGen::contact() }}">{{ t('Contact') }}</a></li>
+                    <li>
+                        <a href="{{ $googleBusinessProfileUrl }}"
+                           target="_blank"
+                           rel="noopener noreferrer">{{ __('Google Business Profile') }}</a>
+                    </li>
                     <li><a href="https://cashingcarz.com/sitemap.xml">{{ t('sitemap') }}</a></li>
                     @if (isset($countries) && $countries->count() > 1)
                         <li><a href="{{ \App\Helpers\UrlGen::countries() }}">{{ t('countries') }}</a></li>
@@ -104,8 +110,20 @@
                     @endif
                 </ul>
 
-                @if ($socialLinksAreEnabled)
-                    <ul class="list-unstyled list-inline mt-3 footer-nav social-list-footer social-list-color footer-nav-inline">
+                <ul class="list-unstyled list-inline mt-3 footer-nav social-list-footer social-list-color footer-nav-inline">
+                    <li class="list-inline-item">
+                        <a class="icon-color gp"
+                           data-bs-placement="top"
+                           data-bs-toggle="tooltip"
+                           href="{{ $googleBusinessProfileUrl }}"
+                           title="{{ __('Google Business Profile') }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                    @if ($socialLinksAreEnabled)
                         <li class="list-inline-item">
                             <a class="icon-color fb"
                                data-bs-placement="top"
@@ -118,8 +136,8 @@
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </li>
-                    </ul>
-                @endif
+                    @endif
+                </ul>
             </div>
         </div>
 
