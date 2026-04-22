@@ -21,8 +21,11 @@
             <priority>{{ $page['priority'] }}</priority>
         </url>
     @endforeach
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 31331aed63788eb49a402f6393390448f59c0b89
     @php
         $locationCities = array_keys(config('fl_location_service_pages'));
     @endphp
