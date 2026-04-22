@@ -31,6 +31,16 @@
 
     // User Menu
     $userMenu ??= collect();
+
+    // Browse listings icon (avoid undefined variable in partial rendering)
+    $currDisplay = config('settings.list.display_mode');
+    $browseListingsIconClass = 'fas fa-th-large';
+    if ($currDisplay == 'make-list') {
+        $browseListingsIconClass = 'fas fa-th-list';
+    }
+    if ($currDisplay == 'make-compact') {
+        $browseListingsIconClass = 'fas fa-bars';
+    }
 @endphp
 <div class="header">
 	<nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">

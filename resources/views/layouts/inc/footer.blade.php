@@ -76,7 +76,11 @@
                 <h4 class="footer-title">Services</h4>
                 <ul class="list-unstyled footer-nav">
                     <li><a href="{{ route('services') }}">{{ __('Services') }}</a></li>
-                    <li><a href="{{ route('location.services') }}">{{ __('Location Services') }}</a></li>
+                    <li>
+                        <a href="{{ \Illuminate\Support\Facades\Route::has('location.services') ? route('location.services') : url('/location-services') }}">
+                            {{ __('Location Services') }}
+                        </a>
+                    </li>
                     <li><a href="{{ route('get_offer') }}">{{ __('Get Offer') }}</a></li>
                     <li><a href="{{ route('sells') }}">{{ __('Sell') }}</a></li>
                     <li><a href="{{ route('donate') }}">{{ __('Donate') }}</a></li>

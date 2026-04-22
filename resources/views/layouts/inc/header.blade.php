@@ -20,6 +20,16 @@
         $logoLabel = config('settings.app.name') . (!empty($countryName) ? ' ' . $countryName : '');
     }
     $userMenu ??= collect();
+
+    // Browse listings icon (avoid undefined variable in partial rendering)
+    $currDisplay = config('settings.list.display_mode');
+    $browseListingsIconClass = 'fas fa-th-large';
+    if ($currDisplay == 'make-list') {
+        $browseListingsIconClass = 'fas fa-th-list';
+    }
+    if ($currDisplay == 'make-compact') {
+        $browseListingsIconClass = 'fas fa-bars';
+    }
 @endphp
 <div class="header co-header">
     <nav class="navbar navbar-light bg-white co-nav navbar-expand-lg fixed-top" role="navigation" aria-label="Primary">
