@@ -36,7 +36,7 @@
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="{{ t('Close') }}"></button>
-                            <h5><strong>{{ t('oops_an_error_has_occurred') }}</strong></h5>
+                            <p class="mb-2"><strong>{{ t('oops_an_error_has_occurred') }}</strong></p>
                             <ul class="list list-check">
                                 @foreach ($errors->all() as $error)
                                     <li>{!! $error !!}</li>
@@ -202,7 +202,7 @@
                     </p>
 
                     <div class="content-content mb-5 co-content-panel p-4">
-                        <h1>About Cashing Carz</h1>
+                        <h2>About Cashing Carz</h2>
                         <p>
                             We understand that selling or donating a car can be a daunting task. That's why we've made
                             it our mission to simplify the process and offer unparalleled service to our customers. With

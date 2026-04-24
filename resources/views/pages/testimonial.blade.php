@@ -102,6 +102,7 @@
     </style>
     <div class="main-container">
         <div class="container">
+            <h1 class="visually-hidden">Customer Testimonials</h1>
             <div class="row clearfix mb-5">
                 <div class="col-md-12">
                     <div class="testmonial_header p-3"
@@ -192,7 +193,7 @@
                             <div class="col-md-6">
                                 <div class="testimonials">
                                     <div class="testimonial">
-                                        <h2>"{{$testimonial->title}}"</h2>
+                                        <h3>"{{$testimonial->title}}"</h3>
                                         <p> {{$testimonial->description}}. <span
                                                     class="testimonal-author">{{$testimonial->person}}</span></p>
                                     </div>
@@ -216,7 +217,7 @@
                             <div class="col-md-6">
                                 <div class="testimonials">
                                     <div class="testimonial">
-                                        <h2>"{{$testimonial->title}}"</h2>
+                                        <h3>"{{$testimonial->title}}"</h3>
                                         <p> {{$testimonial->description}}. <span
                                                     class="testimonal-author">{{$testimonial->person}}</span></p>
                                     </div>

@@ -25,56 +25,58 @@
     
      
 
- @if(!isset($meta_title))
-    <title>@yield('meta_title', config('app.name'))</title>
-         <meta name="title" content="@yield('meta_title')">
-    <meta name="description" content="@yield('meta_description')">
-    <meta name="keywords" content="@yield('meta_keywords', 'default, keywords, here')">
-    <meta name="robots" content="@yield('meta_robots', 'noindex, follow')">
+@php
+    $seoOverrides = config('seo.overrides', []);
+    $currentPath = trim(request()->path(), '/');
+    $seoOverride = $seoOverrides[$currentPath] ?? null;
 
-@endif
- 
-    
-@if(isset($meta_title))
-  <title>@isset($blog) {{ $blog->meta_title ?? $blog->title }} @endisset</title>
-   
-   
-    <meta name="title" content="{{ $blog->meta_title }}">
-    <meta name="description" content="{{ $blog->meta_description }}">
-    <meta name="keywords" content="{{ $blog->meta_keywords }}">
-    <meta property="og:title" content="{{ $blog->og_title }}">
-    <meta property="og:description" content="{{ $blog->og_description }}">
-    <meta property="og:type" content="{{ $blog->og_type }}">
-    <meta property="og:url" content="{{ $blog->og_url }}">
-    <meta property="og:image" content="@isset($meta_image){{ $meta_image }}@else{{ asset('storage/'.$blog->og_image) }}@endisset">
-    <meta name="twitter:title" content="{{ $blog->og_title }}">
-    <meta name="twitter:description" content="{{ $blog->og_description }}">
-    <meta name="twitter:image" content="@isset($meta_image){{ $meta_image }}@else{{ asset('storage/'.$blog->og_image) }}@endisset">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <meta name="robots" content="@yield('meta_robots', ' index, follow')">
-@endif
+    $sectionMetaTitle = trim((string) $__env->yieldContent('meta_title'));
+    $sectionMetaDescription = trim((string) $__env->yieldContent('meta_description'));
+    $sectionMetaKeywords = trim((string) $__env->yieldContent('meta_keywords'));
+    $sectionMetaRobots = trim((string) $__env->yieldContent('meta_robots'));
 
+    if (isset($blog)) {
+        $resolvedMetaTitle = trim((string) ($blog->meta_title ?? $blog->title ?? config('app.name')));
+        $resolvedMetaDescription = trim((string) ($blog->meta_description ?? ''));
+        $resolvedFocusKeyword = trim((string) ($blog->meta_keywords ?? ''));
+        $resolvedOgTitle = trim((string) ($blog->og_title ?? $resolvedMetaTitle));
+        $resolvedOgDescription = trim((string) ($blog->og_description ?? $resolvedMetaDescription));
+        $resolvedOgType = trim((string) ($blog->og_type ?? 'article'));
+        $resolvedOgUrl = trim((string) ($blog->og_url ?? request()->fullUrl()));
+        $resolvedOgImage = isset($meta_image)
+            ? $meta_image
+            : (!empty($blog->og_image) ? asset('storage/' . $blog->og_image) : asset('images/logo.png'));
+    } else {
+        $resolvedMetaTitle = $seoOverride['meta_title'] ?? ($sectionMetaTitle ?: config('app.name'));
+        $resolvedMetaDescription = $seoOverride['meta_description'] ?? $sectionMetaDescription;
+        $resolvedFocusKeyword = $seoOverride['focus_keyword'] ?? $sectionMetaKeywords;
+        $resolvedOgTitle = $seoOverride['og_title'] ?? $resolvedMetaTitle;
+        $resolvedOgDescription = $seoOverride['og_description'] ?? $resolvedMetaDescription;
+        $resolvedOgType = $seoOverride['og_type'] ?? 'website';
+        $resolvedOgUrl = request()->fullUrl();
+        $resolvedOgImage = isset($meta_image) ? $meta_image : asset('images/logo.png');
+    }
 
-   @if(request()->is('/*')) {{-- Adjust 'pages/*' based on your route pattern for pages --}}
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="@isset($meta_title){{ $meta_title }}@else @yield('meta_title') @endisset">
-    <meta property="og:description" content="@isset($meta_description){{ $meta_description }}@else @yield('meta_description') @endisset">
-    <meta property="og:image" content="@isset($meta_image){{ $meta_image }}@else{{ asset('path/to/default-image.jpg') }}@endisset">
-    <meta property="og:image:alt" content="@isset($meta_title){{ $meta_title }}@else{{ config('app.name') }}@endisset">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:type" content="website"> 
-    <meta property="og:url" content="{{ request()->fullUrl() }}">
+    $resolvedMetaRobots = $sectionMetaRobots ?: 'index, follow';
+@endphp
 
-    <!-- Twitter Card -->
-    <meta name="twitter:title" content="@isset($meta_title){{ $meta_title }}@else @yield('meta_title') @endisset">
-    <meta name="twitter:description" content="@isset($meta_description){{ $meta_description }}@else @yield('meta_description') @endisset">
-    <meta name="twitter:image" content="@isset($meta_image){{ $meta_image }}@else{{ asset('path/to/default-image.jpg') }}@endisset">
-    <meta name="twitter:card" content="summary_large_image">
-    
-      <!-- Robots meta tag to control indexing and following links -->
-    <meta name="robots" content="@yield('meta_robots', ' index, follow')">
-@endif
+<title>{{ $resolvedMetaTitle }}</title>
+<meta name="title" content="{{ $resolvedMetaTitle }}">
+<meta name="description" content="{{ $resolvedMetaDescription }}">
+<meta name="keywords" content="{{ $resolvedFocusKeyword }}">
+<meta name="focus_keyword" content="{{ $resolvedFocusKeyword }}">
+<meta name="robots" content="{{ $resolvedMetaRobots }}">
+
+<meta property="og:title" content="{{ $resolvedOgTitle }}">
+<meta property="og:description" content="{{ $resolvedOgDescription }}">
+<meta property="og:type" content="{{ $resolvedOgType }}">
+<meta property="og:url" content="{{ $resolvedOgUrl }}">
+<meta property="og:image" content="{{ $resolvedOgImage }}">
+<meta property="og:image:alt" content="{{ $resolvedMetaTitle }}">
+<meta name="twitter:title" content="{{ $resolvedOgTitle }}">
+<meta name="twitter:description" content="{{ $resolvedOgDescription }}">
+<meta name="twitter:image" content="{{ $resolvedOgImage }}">
+<meta name="twitter:card" content="summary_large_image">
 
     <!-- Canonical link -->
     <link rel="canonical" href="{{ request()->fullUrl() }}"/>

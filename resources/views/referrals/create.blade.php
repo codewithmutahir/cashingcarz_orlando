@@ -21,7 +21,7 @@
     </div>
 
     <div class="card shadow-sm border co-referrals-card rounded-4 p-4">
-        <h4 class="mb-4 text-center co-referrals-card__title">Referral information</h4>
+        <h2 class="mb-4 text-center co-referrals-card__title">Referral information</h2>
 
         <form action="{{ route('referrals.store') }}" method="POST">
             @csrf
@@ -66,7 +66,7 @@
 
             <hr class="my-4">
 
-            <h5 class="text-secondary mb-3">Car Information</h5>
+            <h3 class="text-secondary mb-3">Car Information</h3>
 
             <div class="row">
                 <div class="col-md-3 mb-3">
@@ -130,17 +130,17 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="termsModalLabel">Cashing Carz Referral Program – Terms & Conditions (T&Cs)</h5>
+        <h2 class="modal-title" id="termsModalLabel">Cashing Carz Referral Program – Terms & Conditions (T&Cs)</h2>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style="line-height: 1.6; font-size: 15px;">
         <p><strong>Thank you for your interest in the Cashing Carz Referral Program!</strong></p>
         <p>The program enables you to receive rewards for referrals made to individuals who want to sell their car with us. Prior to sharing your referral link, please take time to read through these Terms & Conditions.</p>
 
-        <h4 class="fw-bold mt-4">1. Your Agreement to the Terms</h4>
+        <h3 class="fw-bold mt-4">1. Your Agreement to the Terms</h3>
         <p>By participating in the Cashing Carz Referral Program, you are accepting these T&Cs. You're also agreeing that if at some point in the future we make changes to these terms, the fact that you continue participating means you're good with the new changes too.</p>
 
-        <h4 class="fw-bold mt-4">2. How It Works</h4>
+        <h3 class="fw-bold mt-4">2. How It Works</h3>
         <p>Once you submitted a lead via our referral program, you'll be assigned a reference number to keep track of your submitted lead.</p>
         <p>Here's the easy flow:</p>
         <ul>
@@ -150,7 +150,7 @@
           <li>4. Once the lead is converted into sale then our team member will send you the referral amount to your bank account.</li>
         </ul>
 
-        <h4 class="fw-bold mt-4">3. Referral Stages Explained</h4>
+        <h3 class="fw-bold mt-4">3. Referral Stages Explained</h3>
         <p>The status of each referral can be tracked through the reference number. Here's what each stage means:</p>
         <ul>
           <li><strong>Pending Referral:</strong> We have the lead and are working on it.</li>
@@ -159,11 +159,11 @@
           <li><strong>Completed Referral:</strong> We purchased or retrieved the car—yahoo! You're eligible for your reward.</li>
         </ul>
 
-        <h4 class="fw-bold mt-4">4. Your Reward</h4>
+        <h3 class="fw-bold mt-4">4. Your Reward</h3>
         <p>For every Completed Referral, you'll earn <strong>$100</strong> (sent to your submitted bank account). You can see it all right in your account.</p>
         <p><em>Important note:</em> You're responsible for reporting any earnings on your taxes.</p>
 
-        <h4 class="fw-bold mt-4">5. Important Rules and Requirements</h4>
+        <h3 class="fw-bold mt-4">5. Important Rules and Requirements</h3>
         <p>Here’s what to keep in mind to qualify for the reward:</p>
         <ul>
           <li><strong>✅ What’s Required:</strong><br>Lead must be converted to sale.<br>The car must be picked up or purchased by Cashing Carz.</li>
@@ -171,29 +171,29 @@
         </ul>
         <p>Any Questions or Disputes? We’ll look into them, and Cashing Carz will make the final call.</p>
 
-        <h4 class="fw-bold mt-4">6. Changes to the Program</h4>
+        <h3 class="fw-bold mt-4">6. Changes to the Program</h3>
         <p>We have the right to alter or end this referral program at our discretion. This can be achieved by adjusting the reward amount, altering the terms of eligibility, or even canceling the program altogether.</p>
         <p>We will try to let you know in case we make any changes through your account or email.</p>
 
-        <h4 class="fw-bold mt-4">7. Play Fair</h4>
+        <h3 class="fw-bold mt-4">7. Play Fair</h3>
         <p>We ask that you promote the program ethically. That is, no spamming, no misrepresentations, and no underhanded tactics. If we find otherwise, we can remove you from the program.</p>
 
-        <h4 class="fw-bold mt-4">8. No Guarantees (aka Our Disclaimer)</h4>
+        <h3 class="fw-bold mt-4">8. No Guarantees (aka Our Disclaimer)</h3>
         <p>The referral program is offered as-is. We cannot promise it'll always be available, free of bugs, or perfect. We'll do our best, but sometimes technology blips happen.</p>
 
-        <h4 class="fw-bold mt-4">9. Limits on Our Liability</h4>
+        <h3 class="fw-bold mt-4">9. Limits on Our Liability</h3>
         <p>We're not liable for damages or problems that may arise from being included in this program. In case something goes wrong, our absolute liability is capped at the total amount that we have paid you within the last year.</p>
 
-        <h4 class="fw-bold mt-4">10. Your Responsibility</h4>
+        <h3 class="fw-bold mt-4">10. Your Responsibility</h3>
         <p>In case a problem arises due to an action of yours or gives rise to a legal issue, you undertake to bear all the costs or damage connected therewith for Cashing Carz and our staff.</p>
 
-        <h4 class="fw-bold mt-4">11. Term & Updates</h4>
+        <h3 class="fw-bold mt-4">11. Term & Updates</h3>
         <p>These terms continue to apply while you are a program participant. We can change them whenever we feel necessary, and the latest version is always accessible here.</p>
 
-        <h4 class="fw-bold mt-4">12. What Happens After the Program Ends</h4>
+        <h3 class="fw-bold mt-4">12. What Happens After the Program Ends</h3>
         <p>Even if the program is cancelled or you choose to discontinue program participation, some provisions of these terms—like the limitation of our liability and your obligations—will be enforceable.</p>
 
-        <h4 class="fw-bold mt-4">13. Third-Party Platform</h4>
+        <h3 class="fw-bold mt-4">13. Third-Party Platform</h3>
         <p>Our referral program is run on your behalf by a well-established third-party business. When you join, you agree to allowing them access to your details—but only for the limited purpose of running the referral program. Both our privacy policies apply.</p>
 
         <p class="mt-4">Still have questions? <strong>Contact our team for more info.</strong> Thanks for being part of the Cashing Carz Referral Program. Happy referring—and happy earning!</p>

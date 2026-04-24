@@ -246,13 +246,13 @@
                     </ul>
                 </div>
                 <div class="col-lg-8 co-legacy-panel__body">
-                    <h4>Sell your car today</h4>
+                    <h3>Sell your car today</h3>
                     <ul>
                         <li>Receive an instant offer to sell your car quickly. Get an accurate valuation in just minutes.</li>
                         <li>Rest assured of our guaranteed offer. Once quoted, the amount you receive will not decrease.</li>
                         <li>Receive immediate payment for your car on the spot when we arrive to pick it up.</li>
                     </ul>
-                    <h4 class="mt-4">Sell your car the easy way today</h4>
+                    <h3 class="mt-4">Sell your car the easy way today</h3>
                     <ul>
                         <li>Receive bids directly on your phone, making selling used cars a breeze.</li>
                         <li>Same day pick up in most cases.</li>
@@ -273,7 +273,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-8 co-legacy-panel__body">
-                    <h4>Best car buyer near you</h4>
+                    <h3>Best car buyer near you</h3>
                     <ul>
                         <li>We offer the best car buying experience in your area.</li>
                         <li>Find us nearby for easy and hassle-free transactions.</li>

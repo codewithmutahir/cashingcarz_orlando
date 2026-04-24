@@ -1,8 +1,13 @@
 @extends('layouts.master')
 
-@section('meta_title', $page['meta_title'])
-@section('meta_description', $page['meta_description'])
-@section('meta_keywords', $page['meta_keywords'])
+@php
+    $locationSlug = request()->segment(2);
+    $locationSeo = config('seo.location_overrides.' . $locationSlug, []);
+@endphp
+
+@section('meta_title', $locationSeo['meta_title'] ?? $page['meta_title'])
+@section('meta_description', $locationSeo['meta_description'] ?? $page['meta_description'])
+@section('meta_keywords', $locationSeo['focus_keyword'] ?? $page['meta_keywords'])
 @section('meta_robots', 'index, follow')
 
 @section('content')
@@ -49,9 +54,9 @@
     <div style="background:linear-gradient(135deg,rgba(6,255,165,0.12),rgba(255,210,63,0.12));border-radius:20px;padding:3rem 2rem;margin-bottom:2rem;border:1px solid rgba(6,255,165,0.2);">
       <h2 style="font-size:2rem;font-weight:700;color:#0F0C29;margin-bottom:2rem;text-align:center;">🔄 Eco-Friendly Car Recycling</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;text-align:center;">
-        <div><div style="font-size:3rem;margin-bottom:1rem;">♻️</div><h4 style="font-weight:600;color:#0F0C29;">Reuse Parts</h4><p style="color:#5A5A5A;">Salvage working components</p></div>
-        <div><div style="font-size:3rem;margin-bottom:1rem;">🔩</div><h4 style="font-weight:600;color:#0F0C29;">Recycle Metals</h4><p style="color:#5A5A5A;">Process valuable materials</p></div>
-        <div><div style="font-size:3rem;margin-bottom:1rem;">🛡️</div><h4 style="font-weight:600;color:#0F0C29;">Safe Disposal</h4><p style="color:#5A5A5A;">Handle fluids responsibly</p></div>
+        <div><div style="font-size:3rem;margin-bottom:1rem;">♻️</div><h3 style="font-weight:600;color:#0F0C29;font-size:1.25rem;">Reuse Parts</h3><p style="color:#5A5A5A;">Salvage working components</p></div>
+        <div><div style="font-size:3rem;margin-bottom:1rem;">🔩</div><h3 style="font-weight:600;color:#0F0C29;font-size:1.25rem;">Recycle Metals</h3><p style="color:#5A5A5A;">Process valuable materials</p></div>
+        <div><div style="font-size:3rem;margin-bottom:1rem;">🛡️</div><h3 style="font-weight:600;color:#0F0C29;font-size:1.25rem;">Safe Disposal</h3><p style="color:#5A5A5A;">Handle fluids responsibly</p></div>
       </div>
     </div>
     <div style="background:linear-gradient(135deg,#0F0C29 0%,#302B63 50%,#24243e 100%);border-radius:20px;padding:4rem 2rem;text-align:center;color:white;position:relative;overflow:hidden;">

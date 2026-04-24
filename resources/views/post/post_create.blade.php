@@ -5,6 +5,11 @@
     $countries ??= [];
 @endphp
 
+@section('meta_title', 'Get Offer | Cashingcarz Orlando')
+@section('meta_description', 'Get Offer for your junk car in minutes with Cashing Carz Orlando. Fast quotes, top cash offers, and hassle-free vehicle removal today.')
+@section('meta_keywords', 'Get Offer')
+@section('meta_robots', 'index, follow')
+
 @section('content')
 
     <div class="main-container">
@@ -14,9 +19,9 @@
 
                 <div class="col-md-9 page-content">
                     <div class="inner-box category-content" style="overflow: visible;">
-                        <h2 class="title-2">
+                        <h1 class="title-2">
                             <strong><i class="far fa-edit"></i> {{ __('Get Your Offer') }}</strong>
-                        </h2>
+                        </h1>
 
                         <div class="row">
                             <div class="col-xl-12">

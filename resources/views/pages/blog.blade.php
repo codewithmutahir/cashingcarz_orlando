@@ -32,6 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <h1 class="mb-4">Insurance Blog &amp; Tips</h1>
                     <!-- Blog Grid -->
                     <div class="row blog-grid g-4"> <!-- Added gutter spacing -->
                         @forelse($blogs as $blog)
@@ -51,12 +52,12 @@
                                     
                                     <!-- Card Content -->
                                     <div class="card-content p-3 d-flex flex-column">
-                                        <h3 class="fs-5 fw-bold mb-3">
+                                        <h2 class="fs-5 fw-bold mb-3">
                                             <a href="{{ url('/blog/' . $blog->slug) }}"
                                                class="text-decoration-none text-dark">
                                                 {{ Str::limit($blog->title, 50) }}
                                             </a>
-                                        </h3>
+                                        </h2>
                                         
                                         <div class="flex-grow-1">
                                             <p class="text-muted mb-3">

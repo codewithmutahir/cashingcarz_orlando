@@ -165,10 +165,10 @@
                             Donate a car
                             for a needy
                             family</h1>
-                        <h5 class="co-donate-hero__sub">We
+                        <h2 class="co-donate-hero__sub">We
                             will work
                             with local Church, Mosque, Temple
-                        </h5>
+                        </h2>
 
                     </div>
                 </div>
