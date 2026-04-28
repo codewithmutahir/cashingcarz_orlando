@@ -57,7 +57,34 @@
         $resolvedOgImage = isset($meta_image) ? $meta_image : asset('images/logo.png');
     }
 
-    $resolvedMetaRobots = $sectionMetaRobots ?: 'index, follow';
+    // Keep robots output to a single source of truth.
+    $noIndexCategoriesPermalinkPages = $noIndexCategoriesPermalinkPages ?? false;
+    $noIndexCategoriesQueryStringPages = $noIndexCategoriesQueryStringPages ?? false;
+    $noIndexCitiesPermalinkPages = $noIndexCitiesPermalinkPages ?? false;
+    $noIndexCitiesQueryStringPages = $noIndexCitiesQueryStringPages ?? false;
+    $noIndexUsersByIdPages = $noIndexUsersByIdPages ?? false;
+    $noIndexUsersByUsernamePages = $noIndexUsersByUsernamePages ?? false;
+    $noIndexTagsPages = $noIndexTagsPages ?? false;
+    $noIndexFiltersOnEntriesPages = $noIndexFiltersOnEntriesPages ?? false;
+    $noIndexNoResultPages = $noIndexNoResultPages ?? false;
+    $noIndexListingsReportPages = $noIndexListingsReportPages ?? false;
+    $noIndexAllPages = (bool) config('settings.seo.no_index_all');
+
+    $forceNoIndex = (
+        $noIndexAllPages
+        || $noIndexCategoriesPermalinkPages
+        || $noIndexCategoriesQueryStringPages
+        || $noIndexCitiesPermalinkPages
+        || $noIndexCitiesQueryStringPages
+        || $noIndexUsersByIdPages
+        || $noIndexUsersByUsernamePages
+        || $noIndexTagsPages
+        || $noIndexFiltersOnEntriesPages
+        || $noIndexNoResultPages
+        || $noIndexListingsReportPages
+    );
+
+    $resolvedMetaRobots = $forceNoIndex ? 'noindex,nofollow' : ($sectionMetaRobots ?: 'index, follow');
 @endphp
 
 <title>{{ $resolvedMetaTitle }}</title>
@@ -66,6 +93,9 @@
 <meta name="keywords" content="{{ $resolvedFocusKeyword }}">
 <meta name="focus_keyword" content="{{ $resolvedFocusKeyword }}">
 <meta name="robots" content="{{ $resolvedMetaRobots }}">
+@if ($forceNoIndex)
+<meta name="googlebot" content="noindex">
+@endif
 
 <meta property="og:title" content="{{ $resolvedOgTitle }}">
 <meta property="og:description" content="{{ $resolvedOgDescription }}">
@@ -82,7 +112,6 @@
     <link rel="canonical" href="{{ request()->fullUrl() }}"/>
 
     <meta name="google-site-verification" content="-RF83fFc0M8ZfsiuAtDPuoC__M_zwUelVgSmfAZ3mMc">
-    @includeFirst([config('larapen.core.customizedViewPath') . 'common.meta-robots', 'common.meta-robots'])
     <meta name="apple-mobile-web-app-title" content="{{ config('settings.app.name') }}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ $appleIcon144 }}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ $appleIcon114 }}">

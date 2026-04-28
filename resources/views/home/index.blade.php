@@ -2,7 +2,7 @@
 
 @section('meta_title', 'Cashing Orlando | Cash for Junk Cars — Same-Day Pickup')
 @section('meta_description', 'Cashing Orlando buys junk cars for cash in Orlando & Central Florida. Fast offers, free towing, same-day pickup. Get your offer in minutes!')
-@section('meta_keywords', 'cash for junk cars Orlando, sell junk car Orlando, Cashing Orlando')
+@section('meta_keywords', 'cash for junk cars')
 @section('meta_robots', 'index, follow')
 
 @section('search')
