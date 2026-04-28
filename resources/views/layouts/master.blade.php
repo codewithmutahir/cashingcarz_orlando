@@ -111,7 +111,7 @@
     <!-- Canonical link -->
     <link rel="canonical" href="{{ request()->fullUrl() }}"/>
 
-    <meta name="google-site-verification" content="-RF83fFc0M8ZfsiuAtDPuoC__M_zwUelVgSmfAZ3mMc">
+    <meta name="google-site-verification" content="32M1dGKbGsu6iquCz4xzcfNLdtpnaDa0IoNy96UTNBA">
     <meta name="apple-mobile-web-app-title" content="{{ config('settings.app.name') }}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ $appleIcon144 }}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ $appleIcon114 }}">
