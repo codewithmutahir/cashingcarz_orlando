@@ -59,10 +59,10 @@ return [
             'og_description' => 'Contact Us at Cashing Carz Orlando for fast, hassle-free junk car removal. Get a free quote and turn your old car into cash today!',
         ],
         'blog' => [
-            'meta_title' => 'Insurance Blog & Tips | Dhuka Insurance',
+            'meta_title' => 'Our Blog | Cashing Cars Orlando',
             'focus_keyword' => 'Article About Cash for Cars',
             'meta_description' => 'Explore our blog for every Article About Cash for Cars—tips, pricing insights, and easy ways to sell your car fast in Orlando.',
-            'og_title' => 'Insurance Blog & Tips | Dhuka Insurance',
+            'og_title' => 'Our Blog | Cashing Cars Orlando',
             'og_description' => 'Explore our blog for every Article About Cash for Cars—tips, pricing insights, and easy ways to sell your car fast in Orlando.',
         ],
     ],
