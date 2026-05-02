@@ -191,10 +191,9 @@
 <div class="call-float-wrapper" id="callFloatBtn">
     <div class="call-float-label">
         <span class="label-top">Call Now</span>
-        <span class="label-number">+1 817 835-6585</span>
-        <span class="label-number">+1 469 383-8321</span>
+        <span class="label-number">+1 321-442-0085</span>
     </div>
-    <a href="tel:8178356585" class="call-float-btn" aria-label="Call Now: 817 835-6585">
+    <a href="tel:3214420085" class="call-float-btn" aria-label="Call Now: 321-442-0085">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
              stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07

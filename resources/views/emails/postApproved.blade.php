@@ -16,7 +16,7 @@
 
 <p>Otherwise, we confirm the receipt of your order, and the buyer will contact you shortly.</p>
 
-<p>For immediate assistance, please call us at (469) 383-8321.</p>
+<p>For immediate assistance, please call us at 321-442-0085.</p>
 
 <p>Best regards,</p>
 

@@ -25,7 +25,7 @@
                 <a href="{{ url('/get_offer') }}" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4); font-size: clamp(0.9rem, 2.5vw, 1rem);">
                     <span style="font-size: 1.1rem;">💰</span> Get Free Quote
                 </a>
-                <a href="tel:+14693838321" style="background: rgba(6, 255, 165, 0.1); color: #0F0C29; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; border: 2px solid #06FFA5; font-size: clamp(0.9rem, 2.5vw, 1rem);">
+                <a href="tel:3214420085" style="background: rgba(6, 255, 165, 0.1); color: #0F0C29; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; border: 2px solid #06FFA5; font-size: clamp(0.9rem, 2.5vw, 1rem);">
                     <span style="font-size: 1.1rem;">📞</span> Call Now
                 </a>
             </div>

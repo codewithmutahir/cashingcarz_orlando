@@ -116,7 +116,7 @@
                                     <ul>
                                         <li style="list-style: circle;margin-left: 15px"><h3>Get Paid Today</h3></li>
                                     </ul>
-                                    <p>Receive payment today! Contact us at (+1) 469-383-8321 to get your offer.
+                                    <p>Receive payment today! Contact us at (+1) 321-442-0085 to get your offer.
                                     </p>
                                 </div>
 
@@ -138,7 +138,7 @@
                                             details and
                                             payment options</p>
                                         <a href="" class="btn btn-primary"
-                                           style="padding: 10px 25px;display: inline-block">(+1) 469-383-8321</a>
+                                           style="padding: 10px 25px;display: inline-block">(+1) 321-442-0085</a>
                                     </div>
 
                                 </div>

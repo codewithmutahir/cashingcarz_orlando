@@ -13,7 +13,7 @@
 <p>One of our team members will be reaching out to you shortly to schedule a convenient time and date for the vehicle
     pickup. We aim to make this process as smooth and hassle-free as possible for you.</p>
 
-<p>If you require immediate assistance or have any questions, please feel free to call us at (469) 383-8321.</p>
+<p>If you require immediate assistance or have any questions, please feel free to call us at 321-442-0085.</p>
 
 <p>Thank you for choosing Cashing Carz. We look forward to serving you.</p>
 </body>

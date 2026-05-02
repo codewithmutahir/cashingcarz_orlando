@@ -152,8 +152,7 @@
                             <p>
                                <strong>Florida (primary)</strong><br>
                                 Orlando area &amp; Central Florida service zone<br>
-                                <strong>Kissimmee:</strong> 2703 Eagle Ridge Loop, Kissimmee, FL 34746<br>
-                                <strong>Texas (legacy office):</strong> 1024 Alyssa Ln, Carrollton, TX 75006
+                                <strong>Kissimmee:</strong> 2703 Eagle Ridge Loop, Kissimmee, FL 34746
                             </p>
 
                         </div>
@@ -183,11 +182,8 @@
                         <div class="detail">
                             <h3 class="p-2">Phone</h3>
                             
-                            <p>
-                               <strong>Orlando / Central FL:</strong> +1 (407) 442-0085
-                            </p>
                              <p>
-                               <strong>Florida:</strong> +1 (321) 442-0085
+                                <strong>Florida:</strong> +1 (321) 442-0085
                             </p>
                         </div>
 
@@ -223,9 +219,8 @@
                             Ready to sell or donate your car with Cashing Carz? Have questions about our services or
                             need assistance with any automotive-related matter? We're here to help!
                             <br><br>
-                            Phone: +1 469-383-8321<br>
+                            Phone: +1 321-442-0085<br>
                             Email: info@cashingcarz.com<br>
-                            Address: 1024 Alyssa ln Carrollton tx 75006<br>
                             <br>
                             Whether you prefer to give us a call, send us an email, or visit us in person, our friendly
                             and knowledgeable team is ready to assist you. Contact us today to learn more about our

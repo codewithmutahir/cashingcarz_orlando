@@ -205,12 +205,7 @@
                 </p>
                 
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); min-width: 160px;">
-                        <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 0.5rem;">Dallas Office</div>
-                        <a href="tel:+14693838321" style="color: #06FFA5; text-decoration: none; font-size: 1.1rem; font-weight: 600;">
-                            📞 +1 469-383-8321
-                        </a>
-                    </div>
+                    
                     
                     <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); min-width: 160px;">
                         <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 0.5rem;">Florida Office</div>

@@ -221,19 +221,7 @@
                 </p>
                 
                 <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 0.5rem;">Florida Office</div>
-                        <a href="tel:+13214420085" style="color: #06FFA5; text-decoration: none; font-size: 1.3rem; font-weight: 600;">
-                            📞 +1 321-442-0085
-                        </a>
-                    </div>
                     
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 0.5rem;">Dallas HQ</div>
-                        <a href="tel:+14693838321" style="color: #FFD23F; text-decoration: none; font-size: 1.3rem; font-weight: 600;">
-                            📞 +1 469-383-8321
-                        </a>
-                    </div>
                 </div>
                 
                 <a href="{{ url('/get_offer') }}" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);">

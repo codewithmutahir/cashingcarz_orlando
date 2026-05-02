@@ -226,7 +226,7 @@
 
                     <div class="custom-feature-item">
                         <h4 class="custom-feature-heading">Get Paid Today</h4>
-                        <p>Receive payment today! Contact us at (+1) 469-383-8321 to get your offer.</p>
+                        <p>Receive payment today! Contact us at (+1) 321-442-0085 to get your offer.</p>
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                         You have accepted our offer<br>
                         Your reference number is <strong>{{$post_id}}</strong><br>
                         One of our team members will contact you shortly<br>
-                        For immediate assistance, please call us at <a class="text-dark" href="tel: (469) 383-8321"> (469) 383-8321</a>
+                        For immediate assistance, please call us at <a class="text-dark" href="tel: 321-442-0085"> 321-442-0085</a>
                     </p>
                   
                 </div>
