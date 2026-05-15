@@ -278,13 +278,14 @@
 <!--        gtag('config', 'G-1D1HGTCB38');-->
 <!--    </script>-->
     
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17071157197"></script>
+<!-- Google tag (gtag.js): GA4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD44V8HCC9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  gtag('config', 'G-PD44V8HCC9');
   gtag('config', 'AW-17071157197');
 </script>
 
